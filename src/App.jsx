@@ -1,10 +1,8 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import PostCard from "./components/postcard"
+import './App.css';
 
 function App() {
-
   const initialPosts = [
     {
       id: 1,
@@ -30,10 +28,13 @@ function App() {
   ];
 
   return (
-    <>
-      
-    </>
-  )
+    <div style={{ maxWidth: '500px', margin: 'auto', padding: '20px' }}>
+      <h2>Social Media Feed</h2>
+      {initialPosts.map((post) => (
+        <PostCard key={post.id} post={post} />
+      ))}
+    </div>
+  );
 }
 
-export default App
+export default App;
